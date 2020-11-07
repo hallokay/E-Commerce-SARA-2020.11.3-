@@ -65,7 +65,7 @@ html {
 }
 
 body {
-    margin: var(--header-height),0,0,0;
+    margin: var(--header-height), 0, 0, 0;
     font-family: var(--body-font);
     font-size: var(--normal-font);
     color: var(--dark-color);
@@ -94,7 +94,7 @@ body {
 
 /* layout */
 .bd-grid {
-    min-width: 1024px;
+    max-width: 1024px;
     display: grid;
     grid-template-columns: 100%;
     grid-column-gap: 2rem;
@@ -105,3 +105,104 @@ body {
 
 /* header */
 
+.l-header {
+    width: 100%;
+    position: fixed;
+    top: 0; left: 0;
+    z-index: var(--z-fixed);
+    background: var(--gray-color);
+}
+
+ .nav {
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    
+    .nav_menu {
+        position: fixed;
+        top: var(--header-height);
+        right: -100%;
+        width: 80%;
+        height: 100%;
+        padding: 2rem;
+        background: var(--white-color);
+        transition: .5s;
+    } 
+}
+
+.nav_item {
+ margin-bottom: var(--mb-4);
+}
+.nav_link {
+    color: var(--dark-color);
+    font-weight: var(--font-semi);
+    text-transform: capitalize;
+
+}
+.nav_link:hover {
+     color: var(--first-color);
+}
+.nav_logo {
+    font-weight: var(--font-bold);
+}
+.nav_cart {
+    font-size: 1.3rem;
+    margin-right: var(--mb-2);
+}
+.nav_toggle {
+    font-size: 1.3rem;
+    cursor: pointer;
+} 
+
+/* show menu */
+.show {
+    right: 0;
+}
+.active {
+    color: var(--first-color);
+} 
+
+
+/* main */
+.home {
+    background: var(--gray-color);
+}
+.home_container {
+    height: calc( 100vh - var(--header-height));
+}
+.home_data {
+    padding-top: 6rem;
+}
+.home_title {
+    align-self: center;
+    font-size: var(--big-font-size);
+    line-height: 1;
+    letter-spacing: .5rem;
+    margin-bottom: 4rem;
+}
+.home_title span {
+    font-size: var(--h1-font);
+}
+.home_img {
+    position: absolute;
+    right: 0; bottom: 0;
+    width: 260px;
+}
+
+/* BUTTONS */
+.button {
+    display: inline-block;
+    background: var(--first-color);
+    color: var(--white-color);
+    padding: 1rem;
+    font-size: var(--small-font);
+    font-weight: var(--font-semi);
+    transition: .3s;
+}
+.button:hover {
+    background: var(--first-color-alt);
+}
